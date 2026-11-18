@@ -6,7 +6,7 @@
 </p>
 
 <p align="center"><strong>Libro de Reclamaciones Virtual en la nube</strong><br>
-Proyecto final · Servicios Cloud (100000SI97) · Universidad Tecnológica del Perú · 2026-2</p>
+Proyecto final · Servicios Cloud  · Universidad Tecnológica del Perú · 2026-2</p>
 
 <p align="center">
   <a href="https://reclamaciones.jnsoluciones.workers.dev"><strong>reclamaciones.jnsoluciones.workers.dev</strong></a>
