@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.wrangler/
+# Secretos locales: nunca se suben al repositorio.
+.dev.vars
+.env
+*.local
+*.local.json
+
+# Respaldos y archivos de trabajo locales
+respaldos/
+.secreto_*
+.url_*

@@ -1,0 +1,47 @@
+{
+  "name": "reclamoclaro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Libro de Reclamaciones virtual. Proyecto final de Servicios Cloud (UTP 2026-2). Cloudflare Workers + D1.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "web": "vite",
+    "build": "vite build",
+    "db:local": "wrangler d1 migrations apply reclamoclaro-db --local",
+    "db:remota": "wrangler d1 migrations apply reclamoclaro-db --remote",
+    "tipos": "tsc --noEmit",
+    "desplegar": "wrangler deploy",
+    "prueba:unidad": "node --test pruebas/plazos.test.mjs pruebas/correo.test.mjs pruebas/marca.test.mjs",
+    "prueba:p1": "node pruebas/p1_funcional.mjs",
+    "prueba:p2": "node pruebas/p2_concurrencia.mjs",
+    "prueba:p3": "node pruebas/p3_seguridad.mjs",
+    "prueba:p5": "node pruebas/p5_correo_local.mjs",
+    "prueba:p1:nube": "node pruebas/p1_funcional.mjs --remoto",
+    "prueba:p2:nube": "node pruebas/p2_concurrencia.mjs --remoto",
+    "prueba:p3:nube": "node pruebas/p3_seguridad.mjs --remoto",
+    "usuario:crear": "node scripts/crear_usuario.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "hono": "^4.13.18",
+    "jspdf": "^4.2.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261114.1",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "puppeteer-core": "^25.17.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "wrangler": "^4.162.0"
+  }
+}

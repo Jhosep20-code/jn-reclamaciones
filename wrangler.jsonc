@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Mismo nombre que el Worker creado en el panel: el despliegue lo actualiza y conserva la URL.
+  "name": "reclamaciones",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  // Sin direcciones de vista previa: la única entrada pública es la URL principal.
+  "preview_urls": false,
+  // La interfaz React compilada se sirve como archivos estáticos (sin costo).
+  // Solo las rutas /api/* ejecutan el Worker y cuentan contra la cuota de solicitudes.
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "reclamoclaro-db",
+      // Base creada el 14 nov 2026 con `wrangler d1 create reclamoclaro-db --location=enam`.
+      "database_id": "b550b488-5314-4aa3-b37e-6ff6f33fedf3",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

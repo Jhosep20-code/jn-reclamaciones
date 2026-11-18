@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0B1220" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="JN Reclamaciones: Libro de Reclamaciones Virtual y plataforma de gestión de atención al consumidor." />
+    <meta name="application-name" content="JN Reclamaciones" />
+    <link rel="icon" type="image/svg+xml" href="/src/web/marca/favicon.svg" />
+    <title>JN Reclamaciones</title>
+    <script>
+      // Aplica el tema antes del primer pintado (evita el parpadeo). Solo lee la preferencia guardada.
+      (function () {
+        try {
+          var p = localStorage.getItem('jn-tema');
+          var t = p === 'claro' || p === 'oscuro' ? p : matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+          document.documentElement.dataset.tema = t;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="raiz"></div>
+    <script type="module" src="/src/web/main.tsx"></script>
+  </body>
+</html>

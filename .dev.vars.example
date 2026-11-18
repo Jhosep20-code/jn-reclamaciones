@@ -1,0 +1,9 @@
+# Copie este archivo como .dev.vars (no se versiona) y ponga valores propios.
+# Solo para desarrollo local con «wrangler dev». En la nube se cargan con «npx wrangler secret put <NOMBRE>».
+
+# Clave para calcular huellas anónimas del origen de las solicitudes (límites por origen). Cadena aleatoria larga.
+SECRETO_HUELLAS=cambie-por-una-cadena-aleatoria-larga
+
+# Opcional: relevo de correo. Sin estas dos variables el sistema funciona y deja los correos como «pendientes».
+# URL_RELEVO_CORREO=https://<su-relevo-de-correo>
+# SECRETO_CORREO=cambie-por-una-cadena-aleatoria-de-64-caracteres-hexadecimales
